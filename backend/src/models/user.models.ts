@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 const userSchema = new mongoose.Schema({
-    authOID: {
+    auth0ID: {
         type: String,
         required: true,
     },
