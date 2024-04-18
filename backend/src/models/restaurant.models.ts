@@ -35,7 +35,7 @@ const restaurantSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    estimatedDelhiveryTime: {
+    estimatedDeliveryTime: {
         type: Number,
         required: true,
     },
@@ -53,4 +53,4 @@ const restaurantSchema = new mongoose.Schema({
 })
 
 
-export const Resturant = mongoose.model("Restaurant",restaurantSchema);
+export const Restaurant = mongoose.model("Restaurant",restaurantSchema);
