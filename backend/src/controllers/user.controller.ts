@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 
 
-const getCurrentUser = asyncHandler(async (req: Request, res: Response) => {
+const getCurrentUser = asyncHandler( async (req: Request, res: Response) => {
     try {
         const currentUser = await User.findOne({ _id: req.userId })
         
@@ -74,7 +74,7 @@ const updateCurrentUser = asyncHandler(async (req: Request, res: Response) => {
 });
 
 
-export default {
+export{
     getCurrentUser,
     createCurrentUser,
     updateCurrentUser,
