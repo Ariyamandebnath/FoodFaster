@@ -5,12 +5,12 @@ import mongoose from 'mongoose';
 
 
 
-const getCurrentUser = asyncHandler( async (req: Request, res: Response) => {
+const getCurrentUser = async (req: Request, res: Response) => {
     try {
         const currentUser = await User.findOne({ _id: req.userId })
         
         if (!currentUser) {
-            return res.status(404).send({ message:  "User not found"})
+            return res.status(404).send({ message: "User not found" })
         }
 
         res.json(currentUser)
@@ -22,8 +22,8 @@ const getCurrentUser = asyncHandler( async (req: Request, res: Response) => {
         });
         
     }
-})
-const createCurrentUser = asyncHandler(async (req: Request, res: Response) => {
+};
+const createCurrentUser = async (req: Request, res: Response) => {
     try {
         const { auth0Id } = req.body;
         const existingUser = await User.findOne({ _id: auth0Id });
@@ -45,9 +45,9 @@ const createCurrentUser = asyncHandler(async (req: Request, res: Response) => {
         });
         
     }
-})
+}
 
-const updateCurrentUser = asyncHandler(async (req: Request, res: Response) => {
+const updateCurrentUser = async (req: Request, res: Response) => {
     try {
         const { name, addressLine1, country, city } = req.body;
 
@@ -71,7 +71,7 @@ const updateCurrentUser = asyncHandler(async (req: Request, res: Response) => {
         res.status(500).json({ message: " Error updating user " });
         
     }
-});
+}
 
 
 export{
